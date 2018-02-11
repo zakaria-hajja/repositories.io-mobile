@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Repositories</string>
+    <string name="app_title">Trending Repos</string>
+    <string name="empty_list_title">Empty list </string>
+    <string name="network_error">You have no internet connexion, check your provider and reload </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
