@@ -1,6 +1,6 @@
 package com.zakaria.repositories.dagger.module
 
-import com.zakaria.repositories.viewmodel.RepositoryViewModel
+import com.zakaria.repositories.ui.repositories.RepositoryViewModel
 import dagger.Module
 import dagger.Provides
 
@@ -12,7 +12,7 @@ import dagger.Provides
 class FragmentModule{
 
     @Provides
-    fun providesRepositoryViewModel():RepositoryViewModel{
+    fun providesRepositoryViewModel(): RepositoryViewModel {
         return RepositoryViewModel()
     }
 }

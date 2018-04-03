@@ -1,4 +1,4 @@
-package com.zakaria.repositories.ui.fragment
+package com.zakaria.repositories.ui.repositories
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -9,9 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.zakaria.repositories.R
 import com.zakaria.repositories.databinding.FragmentRepositoryBinding
-import com.zakaria.repositories.ui.activity.RepositoryActivity
 import com.zakaria.repositories.ui.adapter.RepositoryAdapter
-import com.zakaria.repositories.viewmodel.RepositoryViewModel
 import javax.inject.Inject
 
 /**
@@ -19,14 +17,14 @@ import javax.inject.Inject
  */
 class RepositoryFragment: Fragment() {
     @Inject
-    lateinit var viewModel:RepositoryViewModel
+    lateinit var viewModel: RepositoryViewModel
     lateinit var binding : FragmentRepositoryBinding
     lateinit var adapter : RepositoryAdapter
     lateinit var linearLayoutManager : LinearLayoutManager
 
 
     companion object{
-        fun newInstance() :RepositoryFragment=RepositoryFragment()
+        fun newInstance() : RepositoryFragment = RepositoryFragment()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

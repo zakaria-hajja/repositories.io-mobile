@@ -1,4 +1,4 @@
-package com.zakaria.repositories.service.retrofit
+package com.zakaria.repositories.data.service.retrofit
 
 import io.reactivex.Observable
 import retrofit2.http.GET

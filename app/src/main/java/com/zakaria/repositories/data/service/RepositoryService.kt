@@ -1,6 +1,6 @@
-package com.zakaria.repositories.service
+package com.zakaria.repositories.data.service
 
-import com.zakaria.repositories.model.Repository
+import com.zakaria.repositories.data.model.Repository
 import io.reactivex.Observable
 
 /**

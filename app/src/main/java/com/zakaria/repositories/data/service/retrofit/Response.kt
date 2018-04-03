@@ -1,7 +1,7 @@
-package com.zakaria.repositories.service.retrofit
+package com.zakaria.repositories.data.service.retrofit
 
 import com.google.gson.annotations.SerializedName
-import com.zakaria.repositories.model.Repository
+import com.zakaria.repositories.data.model.Repository
 import java.io.Serializable
 
 /**

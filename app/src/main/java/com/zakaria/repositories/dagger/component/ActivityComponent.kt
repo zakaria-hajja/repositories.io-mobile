@@ -2,8 +2,8 @@ package com.zakaria.repositories.dagger.component
 
 import com.zakaria.repositories.dagger.module.ActivityModule
 import com.zakaria.repositories.ui.BaseActivity
-import com.zakaria.repositories.ui.activity.RepositoryActivity
-import com.zakaria.repositories.ui.activity.RepositoryDetailsActivity
+import com.zakaria.repositories.ui.repositories.RepositoryActivity
+import com.zakaria.repositories.ui.repositorydetails.RepositoryDetailsActivity
 import dagger.Subcomponent
 
 /**

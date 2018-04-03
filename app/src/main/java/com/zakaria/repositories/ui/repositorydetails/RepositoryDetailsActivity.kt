@@ -1,4 +1,4 @@
-package com.zakaria.repositories.ui.activity
+package com.zakaria.repositories.ui.repositorydetails
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.os.Bundle
 import com.zakaria.repositories.R
 import com.zakaria.repositories.ui.BaseActivity
 import com.zakaria.repositories.ui.FragmentReplacer
-import com.zakaria.repositories.ui.fragment.RepositoryDetailsFragment
 
 class RepositoryDetailsActivity : BaseActivity() {
 

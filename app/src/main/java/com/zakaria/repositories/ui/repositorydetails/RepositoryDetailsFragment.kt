@@ -1,4 +1,4 @@
-package com.zakaria.repositories.ui.fragment
+package com.zakaria.repositories.ui.repositorydetails
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -15,7 +15,7 @@ class RepositoryDetailsFragment : Fragment() {
 
 
     companion object {
-        fun newInstance():RepositoryDetailsFragment=RepositoryDetailsFragment()
+        fun newInstance(): RepositoryDetailsFragment = RepositoryDetailsFragment()
 
     }
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zakaria.repositories.databinding.RepositoryListItemBinding
-import com.zakaria.repositories.model.Repository
+import com.zakaria.repositories.data.model.Repository
 import com.zakaria.repositories.navigator.Navigator
 
 /**

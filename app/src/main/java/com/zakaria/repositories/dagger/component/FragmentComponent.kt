@@ -1,8 +1,8 @@
 package com.zakaria.repositories.dagger.component
 
 import com.zakaria.repositories.dagger.module.FragmentModule
-import com.zakaria.repositories.ui.fragment.RepositoryDetailsFragment
-import com.zakaria.repositories.ui.fragment.RepositoryFragment
+import com.zakaria.repositories.ui.repositorydetails.RepositoryDetailsFragment
+import com.zakaria.repositories.ui.repositories.RepositoryFragment
 import dagger.Subcomponent
 
 /**

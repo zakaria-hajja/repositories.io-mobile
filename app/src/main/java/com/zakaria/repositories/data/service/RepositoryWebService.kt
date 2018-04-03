@@ -1,8 +1,7 @@
-package com.zakaria.repositories.service
+package com.zakaria.repositories.data.service
 
-import android.support.annotation.MainThread
-import com.zakaria.repositories.model.Repository
-import com.zakaria.repositories.service.retrofit.RetrofitService
+import com.zakaria.repositories.data.model.Repository
+import com.zakaria.repositories.data.service.retrofit.RetrofitService
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
