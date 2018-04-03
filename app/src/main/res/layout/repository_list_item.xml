@@ -5,7 +5,7 @@
     <data>
         <variable
             name="repository"
-            type="com.zakaria.repositories.model.Repository"/>
+            type="com.zakaria.repositories.data.model.Repository"/>
     </data>
     <LinearLayout
         android:layout_width="match_parent"

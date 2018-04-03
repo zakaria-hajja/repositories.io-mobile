@@ -12,10 +12,11 @@ import javax.inject.Inject
  * Created by Zakaria on 05/02/2018.
  */
 
- class RepositoryActivity() : BaseActivity(){
+ class RepositoryActivity : BaseActivity(){
 
-    @Inject
+    //@Inject
     lateinit var presenter : RepositoriesPresenter
+
     companion object{
         fun getIntent(context: Context):Intent {
             return Intent(context, RepositoryActivity::class.java)

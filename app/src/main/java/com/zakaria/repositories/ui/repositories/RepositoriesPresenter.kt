@@ -1,6 +1,5 @@
 package com.zakaria.repositories.ui.repositories
 
-import android.arch.lifecycle.ViewModelProvider
 import com.zakaria.repositories.ui.MvpPresenter
 
 class RepositoriesPresenter : MvpPresenter{
