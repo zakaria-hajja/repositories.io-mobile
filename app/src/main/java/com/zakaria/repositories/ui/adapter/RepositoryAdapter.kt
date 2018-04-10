@@ -16,7 +16,7 @@ import com.zakaria.repositories.navigator.Navigator
 class RepositoryAdapter(val context: Context, val repositories:MutableList<Repository>):RecyclerView.Adapter<RepositoryAdapter.RepoViewHolder>() {
 
     override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
-        holder.bind(repositories.get(0))
+        holder.bind(repositories.get(position))
         holder.itemView.setOnClickListener(View.OnClickListener {
             val navigator =Navigator(context as AppCompatActivity)
             navigator.goToRepositoriesDetails()

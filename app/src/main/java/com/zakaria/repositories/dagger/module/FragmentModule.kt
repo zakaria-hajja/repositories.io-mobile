@@ -1,5 +1,7 @@
 package com.zakaria.repositories.dagger.module
 
+import com.zakaria.repositories.data.DataManager
+import com.zakaria.repositories.ui.repositories.RepositoriesPresenter
 import com.zakaria.repositories.ui.repositories.RepositoryViewModel
 import dagger.Module
 import dagger.Provides
@@ -12,7 +14,8 @@ import dagger.Provides
 class FragmentModule{
 
     @Provides
-    fun providesRepositoryViewModel(): RepositoryViewModel {
-        return RepositoryViewModel()
+    fun providesRepositoriesPresenter(dataManager: DataManager): RepositoriesPresenter {
+        return RepositoriesPresenter(dataManager)
     }
+
 }

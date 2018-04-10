@@ -1,9 +1,12 @@
 package com.zakaria.repositories.ui.repositories
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,10 +20,12 @@ import javax.inject.Inject
  */
 class RepositoryFragment: Fragment() {
     @Inject
-    lateinit var viewModel: RepositoryViewModel
+    lateinit var presenter : RepositoriesPresenter
+   // @Inject
+   //lateinit var viewModel: RepositoryViewModel
     lateinit var binding : FragmentRepositoryBinding
     lateinit var adapter : RepositoryAdapter
-    lateinit var linearLayoutManager : LinearLayoutManager
+    private lateinit var linearLayoutManager : LinearLayoutManager
 
 
     companion object{
@@ -30,35 +35,30 @@ class RepositoryFragment: Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding = DataBindingUtil.bind(view)
-
         (activity as RepositoryActivity).activityComponent.plusFragmentComponent().inject(this)
-        intialLoad()
-        linearLayoutManager = LinearLayoutManager(activity)
+
+        presenter.viewModel=ViewModelProviders.of(this).get(RepositoryViewModel::class.java)
+        adapter = RepositoryAdapter(activity,ArrayList())
+        binding.recycler.adapter = adapter
+        linearLayoutManager= LinearLayoutManager(activity)
         binding.recycler.layoutManager =linearLayoutManager
         binding.executePendingBindings()
+        loadNext()
     }
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return  inflater?.inflate(R.layout.fragment_repository,container,false)
     }
-    fun intialLoad(){
-        viewModel.getRepositories(1).subscribe({
-            repositories ->
-                if(repositories.isEmpty())
-                    binding.emptyMessage.visibility=View.VISIBLE
-            adapter= RepositoryAdapter(activity,repositories.toMutableList())
-            binding.recycler.adapter=adapter
+    private fun loadNext(page : Int = 0){
+        presenter.getRepositories(page).subscribe {
+            if(it!=null) {
+                adapter.repositories.addAll(it)
+                adapter.notifyDataSetChanged()
 
-        },{e ->
-            binding.emptyMessage.visibility=View.VISIBLE
-        })
-    }
-    fun loadNext(page : Int){
-        viewModel.getRepositories(page).subscribe({
-            repositories ->
-            adapter.repositories.addAll(repositories)
-            adapter.notifyDataSetChanged()
+                if(adapter.repositories.isEmpty())
+                    binding.emptyMessage.visibility = View.VISIBLE
+        } }
 
-        })
+
     }
 
 }

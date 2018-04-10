@@ -1,11 +1,9 @@
 package com.zakaria.repositories.dagger.component
 
 import android.app.Application
-import android.support.v7.app.AppCompatActivity
 import com.zakaria.repositories.dagger.module.ActivityModule
 import com.zakaria.repositories.dagger.modules.AppModule
 import dagger.Component
-import dagger.internal.DaggerCollections
 import javax.inject.Singleton
 
 /**
@@ -15,6 +13,7 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(AppModule::class))
 interface AppComponent {
     fun plusActivityComponent(activityModule:ActivityModule) : ActivityComponent
+
     fun inject(application: Application)
 
     class Initializer{

@@ -14,8 +14,7 @@ import javax.inject.Inject
 
  class RepositoryActivity : BaseActivity(){
 
-    //@Inject
-    lateinit var presenter : RepositoriesPresenter
+
 
     companion object{
         fun getIntent(context: Context):Intent {
@@ -25,7 +24,7 @@ import javax.inject.Inject
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        this.setContentView(R.layout.activity_repository);
+        this.setContentView(R.layout.activity_repository)
         activityComponent.inject(this)
 
         if(savedInstanceState == null){

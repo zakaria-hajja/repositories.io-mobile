@@ -1,7 +1,7 @@
-package com.zakaria.repositories.data.service
+package com.zakaria.repositories.data.api
 
 import com.zakaria.repositories.data.model.Repository
-import com.zakaria.repositories.data.service.retrofit.RetrofitService
+import com.zakaria.repositories.data.api.retrofit.RetrofitService
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -9,7 +9,7 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Created by Zakaria on 11/02/2018.
  */
-class RepositoryWebService(val retrofitService:RetrofitService) : RepositoryService {
+class AppApiManager(val retrofitService:RetrofitService) : ApiManager {
 
 
     override fun search(): Observable<List<Repository>> {
@@ -20,6 +20,6 @@ class RepositoryWebService(val retrofitService:RetrofitService) : RepositoryServ
 
         return retrofitService.getRepositories("created:>2018-01-01",1).map { e -> e.repositories }
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
+                .observeOn(AndroidSchedulers.mainThread())
     }
 }

@@ -1,4 +1,4 @@
-package com.zakaria.repositories.data.service
+package com.zakaria.repositories.data.api
 
 import com.zakaria.repositories.data.model.Repository
 import io.reactivex.Observable
@@ -6,7 +6,7 @@ import io.reactivex.Observable
 /**
  * Created by Zakaria on 11/02/2018.
  */
-interface RepositoryService {
+interface ApiManager {
 
 
     fun search():Observable<List<Repository>>

@@ -1,4 +1,4 @@
-package com.zakaria.repositories.data.service.retrofit
+package com.zakaria.repositories.data.api.retrofit
 
 import com.google.gson.annotations.SerializedName
 import com.zakaria.repositories.data.model.Repository
