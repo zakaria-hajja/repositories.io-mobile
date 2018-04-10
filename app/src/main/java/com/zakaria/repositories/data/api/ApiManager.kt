@@ -10,5 +10,5 @@ interface ApiManager {
 
 
     fun search():Observable<List<Repository>>
-    fun getRepositories():Observable<List<Repository>>
+    fun getRepositories(page:Int):Observable<List<Repository>>
 }

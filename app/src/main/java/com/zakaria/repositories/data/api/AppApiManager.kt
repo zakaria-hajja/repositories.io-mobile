@@ -16,9 +16,9 @@ class AppApiManager(val retrofitService:RetrofitService) : ApiManager {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getRepositories(): Observable<List<Repository>> {
+    override fun getRepositories(page :Int): Observable<List<Repository>> {
 
-        return retrofitService.getRepositories("created:>2018-01-01",1).map { e -> e.repositories }
+        return retrofitService.getRepositories("created:>2018-01-01",page).map { e -> e.repositories }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
     }

@@ -3,6 +3,7 @@ package com.zakaria.repositories.ui.bindingAdapters
 import android.databinding.BindingAdapter
 import android.support.v7.widget.AppCompatTextView
 import android.widget.ImageView
+import com.squareup.picasso.Picasso
 
 /**
  * Created by Zakaria on 05/02/2018.
@@ -10,8 +11,9 @@ import android.widget.ImageView
 
         @BindingAdapter("imageUrl")
         fun setImageUrl(imageView :ImageView, imageUrl : String ){
+            Picasso.get().load(imageUrl).into(imageView);
 
-        }
+}
         @BindingAdapter("textStars")
         fun setTextStars(textView: AppCompatTextView, nbStars: Long) {
             textView.text = if (nbStars < 1000) {

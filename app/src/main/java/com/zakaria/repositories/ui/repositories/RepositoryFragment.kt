@@ -1,17 +1,17 @@
 package com.zakaria.repositories.ui.repositories
 
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zakaria.repositories.R
 import com.zakaria.repositories.databinding.FragmentRepositoryBinding
+import com.zakaria.repositories.ui.adapter.EndlessRecyclerViewScrolleListener
 import com.zakaria.repositories.ui.adapter.RepositoryAdapter
 import javax.inject.Inject
 
@@ -41,6 +41,13 @@ class RepositoryFragment: Fragment() {
         adapter = RepositoryAdapter(activity,ArrayList())
         binding.recycler.adapter = adapter
         linearLayoutManager= LinearLayoutManager(activity)
+
+        var listener = object : EndlessRecyclerViewScrolleListener(layoutManager = linearLayoutManager) {
+            override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView?) {
+                loadNext(page+1)
+            }
+        }
+        binding.recycler.addOnScrollListener(listener)
         binding.recycler.layoutManager =linearLayoutManager
         binding.executePendingBindings()
         loadNext()

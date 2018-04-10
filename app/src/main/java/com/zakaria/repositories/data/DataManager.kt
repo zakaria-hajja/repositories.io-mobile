@@ -4,5 +4,5 @@ import com.zakaria.repositories.data.model.Repository
 import io.reactivex.Observable
 
 interface DataManager {
-    fun getRepositories(): Observable<List<Repository>>
+    fun getRepositories(page:Int): Observable<List<Repository>>
 }

@@ -15,7 +15,7 @@ class RepositoryViewModel : ViewModel() {
 
     fun getRepositories(page:Int):Observable<List<Repository>>{
 
-        return dataManager.getRepositories()
+        return dataManager.getRepositories(page)
     }
 
 

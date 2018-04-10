@@ -9,8 +9,7 @@ import io.reactivex.Observable
 class AppDataManager(var dbManager:DBManager, var prefsManager: PrefsManager, var apiManager:ApiManager) :DataManager{
 
 
-    override fun getRepositories(): Observable<List<Repository>> = apiManager.getRepositories()
-
+    override fun getRepositories(page:Int): Observable<List<Repository>> = apiManager.getRepositories(page)
 
 
 }
