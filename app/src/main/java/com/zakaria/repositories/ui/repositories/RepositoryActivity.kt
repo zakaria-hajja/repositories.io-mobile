@@ -3,6 +3,7 @@ package com.zakaria.repositories.ui.repositories
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.widget.Toolbar
 import com.zakaria.repositories.R
 import com.zakaria.repositories.ui.BaseActivity
 import com.zakaria.repositories.ui.FragmentReplacer
@@ -26,9 +27,8 @@ import javax.inject.Inject
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_repository)
         activityComponent.inject(this)
-
         if(savedInstanceState == null){
-            replaceFragment(RepositoryFragment.newInstance(),FragmentReplacer.BackStackStrategy.ADD)
+            replaceFragment(RepositoryFragment.newInstance(),FragmentReplacer.BackStackStrategy.DO_NOT_ADD)
         }
     }
 }

@@ -32,9 +32,8 @@ open abstract class BaseActivity : AppCompatActivity(),FragmentReplacer{
     }
 
     override fun replaceFragment(newFragment: Fragment, backStackStrategy: FragmentReplacer.BackStackStrategy, animate: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        replaceFragment(newFragment,backStackStrategy)
     }
-
     override fun replaceFragment(newFragment: Fragment, backStackStrategy: FragmentReplacer.BackStackStrategy) {
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.fragment, newFragment)

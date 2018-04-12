@@ -58,7 +58,6 @@
                 android:text="Joined at Nov 8,2014"
                 android:textColor="#FFF"
                 />
-
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

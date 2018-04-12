@@ -62,7 +62,8 @@ class RepositoryFragment: Fragment() {
                 adapter.notifyDataSetChanged()
 
                 if(adapter.repositories.isEmpty())
-                    binding.emptyMessage.visibility = View.VISIBLE
+                    print("")
+                    //binding.emptyMessage.visibility = View.VISIBLE
         } }
 
 
