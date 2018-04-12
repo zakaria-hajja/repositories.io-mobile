@@ -19,7 +19,7 @@ class RepositoryAdapter(val context: Context, val repositories:MutableList<Repos
         holder.bind(repositories.get(position))
         holder.itemView.setOnClickListener(View.OnClickListener {
             val navigator =Navigator(context as AppCompatActivity)
-            navigator.goToRepositoriesDetails()
+            navigator.goToRepositoriesDetails(repositories.get(position))
         })
     }
 

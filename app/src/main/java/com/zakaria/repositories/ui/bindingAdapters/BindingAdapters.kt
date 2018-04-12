@@ -11,7 +11,9 @@ import com.squareup.picasso.Picasso
 
         @BindingAdapter("imageUrl")
         fun setImageUrl(imageView :ImageView, imageUrl : String ){
-            Picasso.get().load(imageUrl).into(imageView);
+            Picasso.get().setIndicatorsEnabled(true)
+            Picasso.get().load(imageUrl).into(imageView)
+
 
 }
         @BindingAdapter("textStars")

@@ -4,7 +4,6 @@ import android.arch.lifecycle.*
 import com.zakaria.repositories.data.DataManager
 import com.zakaria.repositories.data.model.Repository
 import io.reactivex.Observable
-import javax.inject.Inject
 
 /**
  * Created by Zakaria on 05/02/2018.
