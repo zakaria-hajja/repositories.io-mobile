@@ -26,6 +26,8 @@ import javax.inject.Inject
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_repository)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
         activityComponent.inject(this)
         if(savedInstanceState == null){
             replaceFragment(RepositoryFragment.newInstance(),FragmentReplacer.BackStackStrategy.DO_NOT_ADD)
