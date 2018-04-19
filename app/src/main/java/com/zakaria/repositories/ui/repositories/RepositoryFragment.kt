@@ -7,10 +7,12 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zakaria.repositories.R
+import com.zakaria.repositories.data.model.Repository
 import com.zakaria.repositories.databinding.FragmentRepositoryBinding
 import com.zakaria.repositories.ui.adapter.EndlessRecyclerViewScrolleListener
 import com.zakaria.repositories.ui.adapter.RepositoryAdapter
@@ -58,9 +60,13 @@ class RepositoryFragment: Fragment() {
         return  inflater?.inflate(R.layout.fragment_repository,container,false)
     }
     private fun loadNext(page : Int = 0){
-        presenter.getRepositories(page).subscribe {
-            if(it!=null) {
-                adapter.repositories.addAll(it)
+        presenter.getRepositories(page).subscribe { t: List<Repository>? ,t2:Throwable?->
+            if(t2!=null){
+                Log.e("MAKHADAMACH",t2.message)
+            }
+            else
+                if(t!=null) {
+                adapter.repositories.addAll(t)
                 adapter.notifyDataSetChanged()
 
                 if(adapter.repositories.isEmpty())

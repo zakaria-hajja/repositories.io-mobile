@@ -19,8 +19,8 @@ class FragmentModule{
         return RepositoriesPresenter(dataManager)
     }
     @Provides
-    fun providesRepositoryDetailsPresenter(): RepositoryDetailsPresenter {
-        return RepositoryDetailsPresenter()
+    fun providesRepositoryDetailsPresenter(dataManager: DataManager): RepositoryDetailsPresenter {
+        return RepositoryDetailsPresenter(dataManager)
     }
 
 }
